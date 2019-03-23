@@ -2,6 +2,7 @@
 #include<SFML/Window.hpp>
 
 #include"Ball.h"
+#include"Paddle.h"
 
 using namespace sf;
 using namespace std;
@@ -9,6 +10,7 @@ using namespace std;
 int main()
 {
 	Ball ball(400, 300);
+	Paddle paddle(400, 500);
 	RenderWindow window{ VideoMode{800,600},"my window" };
 	window.setFramerateLimit(60);
 	
@@ -23,10 +25,11 @@ int main()
 			window.close();
 			break;
 		}
+		ball.update();
+		paddle.update();
+		window.draw(paddle);
 		window.draw(ball);
 		window.display();
-
-		ball.update();
 	}
 
 	return 0;

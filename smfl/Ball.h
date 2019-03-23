@@ -16,6 +16,11 @@ public:
 	~Ball()= default;
 
 	void update();
+
+	float left();
+	float right();
+	float top();
+	float bottom();
 	
 };
 
