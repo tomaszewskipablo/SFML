@@ -25,6 +25,8 @@ int main()
 		}
 		window.draw(ball);
 		window.display();
+
+		ball.update();
 	}
 
 	return 0;

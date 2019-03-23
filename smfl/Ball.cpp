@@ -9,13 +9,7 @@ Ball::Ball(float t_X, float t_Y)
 void Ball::draw(RenderTarget& target, RenderStates state)const {
 	target.draw(this->shape, state);
 }
-
-
-//Ball::Ball()
-//{
-//}
-//
-//
-//Ball::~Ball()
-//{
-//}
+void Ball::update()
+{
+	shape.move(this->velocity);
+}
