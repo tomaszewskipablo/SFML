@@ -1,2 +1,3 @@
-﻿  Paddle.cpp
+﻿  main.cpp
+p:\_study\pk4\project\smfl\smfl\main.cpp(33): warning C4715: 'collisionTest': not all control paths return a value
   smfl.vcxproj -> P:\_study\pk4\project\smfl\Debug\smfl.exe

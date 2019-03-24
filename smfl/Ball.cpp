@@ -9,6 +9,11 @@ Ball::Ball(float t_X, float t_Y)
 void Ball::draw(RenderTarget& target, RenderStates state)const {
 	target.draw(this->shape, state);
 }
+Vector2f Ball::getPosition()
+{
+	return shape.getPosition();
+}
+
 void Ball::update()
 {
 	shape.move(this->velocity); // gets vector vector(x,y) 
@@ -22,9 +27,22 @@ void Ball::update()
 	else if (this->bottom()> 600)
 		velocity.y = -ballVelocity;
 }
+void Ball::moveUp(){
+	velocity.y = -ballVelocity;
+}
+void Ball::moveDown(){
+	velocity.y = ballVelocity;
+}
+void Ball::moveLeft() {
+	velocity.x = -ballVelocity;
+}
+void Ball::moveRight() {
+	velocity.x = ballVelocity;
+}
+
 float Ball::left()
 {
-	return this->shape.getPosition().x- shape.getRadius();
+	return this->shape.getPosition().x - shape.getRadius();
 }
 float Ball::right()
 {

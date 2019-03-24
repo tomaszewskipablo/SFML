@@ -2,13 +2,20 @@
 Paddle::Paddle(float t_X, float t_Y)
 {
 	shape.setPosition(t_X, t_Y);
-	shape.setSize({ 20,20 });
+	shape.setSize({ 80,20 });
 	shape.setFillColor(Color::Green);
-	shape.setOrigin(paddleWidth / 2.f, paddleHeight / 2.f); // ball center(origin) is deafault set on the top left to move it to the center we add radious on OX and OY
+	shape.setOrigin(paddleWidth / 2.f, paddleHeight / 2.f);
 }
 void Paddle::draw(RenderTarget& target, RenderStates state)const {
 	target.draw(this->shape, state);
 }
+
+Vector2f Paddle::getPosition()
+{
+	return shape.getPosition();
+}
+
+
 void Paddle::update()
 {
 	this->shape.move(this->velocity); // gets vector vector(x,y) 
